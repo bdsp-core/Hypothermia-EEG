@@ -1,0 +1,194 @@
+Figures: 1a-e, fig
+
+Code: a_Step1_PrepareDataCombined_MakeFig1.m (formerly: a_Step12_PrepareDataCombined.m)
+Input: h1_data.mat,... (EEG, temperature,...)
+Output: CURATEDDATA1.mat,...; SPECTRA1.mat,...; INDIVBURSTDATA1.mat,...; FigEEG_BSR_Temp_1,... (Fig 1-3. a-e)
+
+Code: a_Step2_Fig1_fg.m
+Input: calls: fcnIndividualBurstsInThrees; INDIVBURSTDATA1,...
+Output: 
+
+Code: fcnIndividualBurstsInThrees(fileNo) (this is a function)
+Input: INDIVBURSTDATA1.mat,...
+Output: FigBurstExs_Case1, ... (Fig 1-3, f-g)
+
+Code: a_Step2b_Fig1_h.m (formerly: a_FIG3_BurstColorPlots_C_Plot.m)
+Input: BurstSpectraTempIndiv_1,...,14, BurstSpectraTempAll
+Output: Fig3_ColorPlots.png (Fig 1-3, h)
+
+Code: a_Step3b_Fig4.m (formerly: a_FIG8A_BSPvsTemp.m)
+Input: CURATEDDATA1.mat,...
+Output: BSPTEMP.mat
+
+Code: a_Step3b_Fig4.m (formerly: Fig8B_BSPvsTemp.m)
+Input: BSPTEMP.mat
+Output: FigBSPvsTemp.png, FigBSPIQR.png (Fig 4, a-b)
+
+Code: a_Step4_Fig5.m (formerly: a_FIG2B_BurstAmplitudeDistributions_CDFs.m)
+Input: SPECTRA1,...
+Output: Fig2_LengthAmplitudeCDFs.png (Fig 5) 
+
+Code: a_Step5a_SurivalCurves_Fig6.m (formerly: a_Step20_GetBurstSuppLengthsAndTemps.m)
+Input: SPECTRA1,...; CURATEDDATA1,...
+Output: SurvivalData 
+
+Code: a_Step5b_SurivalCurves_Fig6.m (formerly: a_Step20C_FindSurvivalCurvesD_RSM.m)
+Input: SurvivalData
+Output: FigCDFsColorBar.png (Fig 6,a-d)
+
+Code: a_Step6a.m (formerly: a_Step15_MakeDataForWarmColdComparisonGROUP.m)
+Input: CURATEDDATA1,...
+Output: WarmCold1,...
+
+Code: a_Step6b.m (formerly: a_Step16_MakeDataForLongVsShort.m)
+Input: CURATEDDATA1,...
+Output: ShortLong1,...
+
+Code: a_Step6c.m (formerly: a_Step16_MakeDataForLongVsShortIndividuals.m)
+Input: CURATEDDATA1,...
+Output: ShortLong1.mat,...
+
+
+
+Code: a_Step7_FIG7_CompareSpectraHotCold.m
+Input: WarmCold1,...
+Output: Fig_WarmColdSpectra1.png,...
+
+Code: a_Step15_BSRvsTEMP_RampilWay_v2.m
+Input: cs1_bursts.mat,...,cs_14_bursts.mat; case8ind.mat (these seem to be manually made)
+Output: PlotDataForCaseNo1.mat, ..., 
+
+
+--------------
+
+Code: a_FIG3_BurstColorPlots_A_Prepare.m
+Input: DATA_1.mat,...,DATA_14.mat: individual bursts 
+Output: BurstSpectraTempIndiv_1,...,14, BurstSpectraTempAll 
+
+
+Code: a_FIG4_BSR_vs_Temp.m
+Input: PlotDataForCaseNo1,...,14
+Output: Fig4_EEG_BSR_Temp_1,...,14 (subfigures B,D,E in Figs 1-3)
+
+Code: a_Step3_Prepare_BSPvsTemp.m
+Input: CURATEDDATA1.mat,...,CURATEDDATA14.mat
+Output: BSPTEMP.mat
+
+Code: a_Step4_FIG4B_BSPvsTemp.m
+Input: BSPTEMP
+Output: FigBSPvsTemp.png (Fig 4)
+
+Code: a_Step5_BurstAmplitudeDistributions_CDFs.m
+Input: SPECTRA1.mat,...,SPECTRA14.mat
+Output: Fig2_LengthAmplitudeCDFs.png (Fig 5)
+
+TRY3 seems to have final or nearer-final code
+
+------------------
+
+Find origins of these: 
+DATA_1.mat
+BurstSpectraTempIndiv_1
+
+
+Code: a_FIG1_A_MakeSpectraCrudeEdges.m
+Input: DATA_1.mat,...,DATA_14.mat: individual bursts 
+Output: 
+	BurstSpectraTempIndiv_1,...,14 (pp bt bl f BURST TBURST)
+	BurstSpectraTempAll (PP BT BL f)
+
+Code: a_FIG1_A_SpectraBinsHotVsCold.m
+Input: BurstSpectraTempIndiv_1,..,14 (BURST   TBURST  bl      bt      f       pp)
+Output: Fig1_Spectra.png -- spectra warm and cold 
+
+Code: a_FIG1_B_MakeSpectraFixEdges.m <-- appears broken
+Input: 
+Output: 
+
+Code: a_FIG1_B_SpectraBinsLongVsShort.m <-- not clearly useful
+Input: 
+Output: 
+
+Code: a_FIG3_BurstColorPlots_A_Prepare.m
+Input: DATA_1.mat,...,DATA_14.mat: individual bursts 
+Output: BurstSpectraTempIndiv_1,...,14, BurstSpectraTempAll 
+
+Code: a_FIG3_BurstColorPlots_B_Prepare.m <-- same idea as prior?
+Input: 
+Output: 
+
+Code: a_FIG3_BurstColorPlots_C_Plot.m
+Input: BurstSpectraTempIndiv_1,...,14, BurstSpectraTempAll
+Output: Fig3_ColorPlots.png (subfigure H in Figs 1-3)
+
+
+
+Code: a_FIG4_BSR_vs_Temp.m
+Input: PlotDataForCaseNo1,...,14
+Output: Fig4_EEG_BSR_Temp_1,...,14 (subfigures B,D,E in Figs 1-3)
+
+Code: a_Fig5_BSR_vs_TempAll.m <-- not clearly useful; crappy version of Fig 4a
+Input: 
+Output: 
+
+Code: a_FIG8_A_MakeSpectra_BeforeB.m
+Input: DATA_1.mat,...,DATA_14.mat: individual bursts 
+Output: BurstSpectraTempIndivF8_1,...,14
+
+Code: a_FIG8_B_MakeSpectra_ExtraMargins.m
+Input: BurstSpectraTempIndivF8_1,...,14
+Output: BurstSpectraTempIndivMarginsF8_1,...,14
+
+Code: a_FIG8_C_MakeSpectra_FixedEdges.m
+Input: 
+Output: SPECTRA_NORMED_1,...,14
+
+Code: a_FIG9_A_Spectra.m <-- broken
+Input: BurstSpectraTempIndiv_1,...,14
+Output: BurstSpectraTempLength.mat 
+
+Code: 
+Input: 
+Output: 
+
+Code: 
+Input: 
+Output: 
+
+Code: 
+Input: 
+Output: 
+
+Code: 
+Input: 
+Output: 
+
+----------------
+
+TRY 3: 
+
+FigEEG_BSR_Temp_1.png -> 
+
+Code: a_Step7_FIG7_CompareSpectraHotColdS.m
+Input: 
+Output: Fig7 in paper
+
+Code: 
+Input: 
+Output: 
+
+Code: 
+Input: 
+Output: 
+
+Code: 
+Input: 
+Output: 
+
+Code: 
+Input: 
+Output: 
+
+
+
+
